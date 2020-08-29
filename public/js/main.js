@@ -1,5 +1,5 @@
 // We'll need to change this once we purchase a domain name
-var urlBase = 'http://52.44.251.230/public/api';
+var urlBase = 'http://3.236.38.146/public/api';
 var extension = 'php';
 
 // Example api function call that grabs a fruit from the database
