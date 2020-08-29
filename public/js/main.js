@@ -23,7 +23,7 @@ function getFruit()
             {
                 document.getElementById('fruitColorResult').innerHTML = 'Fruit has been retrieved!';
                 var jsonObject = JSON.parse(xhr.responseText);
-                document.getElementById('fruitColorResult').innerHTML = jsonObject.color;
+                document.getElementById('fruitColorResult').innerHTML = jsonObject.color || jsonObject.error;
             }
         };
         xhr.send(jsonPayload);
