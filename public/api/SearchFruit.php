@@ -13,13 +13,12 @@
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $searchResult = $row['color'];
+            returnWithInfo($searchResult);
         } else {
             returnWithError('No Records Found');
         }
         $conn->close();
     }
-
-    returnWithInfo($searchResult);
 
     function getRequestInfo() {
         return json_decode(file_get_contents('php://input'), true);
