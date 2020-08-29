@@ -8,7 +8,7 @@
     if ($conn->connect_error) {
         returnWithError( $conn-> connect_error );
     } else {
-        $sql = 'SELECT color FROM fruitColors WHERE name = "%' . $inData['fruit'] . '%"';
+        $sql = 'SELECT color FROM fruitColors WHERE name = "' . $inData['fruit'] . '"';
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
@@ -35,7 +35,7 @@
     }
 
     function returnWithInfo($searchResult) {
-        $retValue = '{"result":"' . $searchResult . '", "error":""}';
+        $retValue = '{"color":"' . $searchResult . '", "error":""}';
         sendResultInfoAsJson($retValue);
     }
 
