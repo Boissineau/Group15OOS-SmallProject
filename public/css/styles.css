@@ -1,6 +1,28 @@
-#fruitColorResult
-{
-    width: 85%;
-    color: 'white';
-    background-color: 'black'
+.topnav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    background-color: #333;
+  }
+  
+  .topnav li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+  }
+  
+  li a:hover:not(.active) {
+    color: white;
+    background-color: #111;
+  }
+  
+  .col-centered{
+    margin: 0 auto;
+    float: none;
 }
