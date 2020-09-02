@@ -2,31 +2,35 @@
 
 	$inData = getRequestInfo();
 
-	$id = 0;
-
   $conn = new mysqli('localhost', 'root', 'group15oos', 'contact_manager');
 	if ($conn->connect_error)
 	{
 		error_log("Error connecting to database!");
-		returnUnauthenticated();
+		returnUnsuccessful( false );
 	}
 	else
 	{
 		$email = $conn->real_escape_string($inData["email"]);
 		$password = $conn->real_escape_string($inData["password"]);
 
-		$sql = "SELECT ID FROM Users where Email='" . $email . "' and Password='" . $password . "'";
+		$sql = "SELECT * FROM Users where Email='" . $email . "'";
 		$result = $conn->query($sql);
-		if ($result->num_rows > 0)
+		if ($result->num_rows == 0)
 		{
-			$row = $result->fetch_assoc();
-			$id = $row["ID"];
-
-			returnAuthenticated( $id );
+			$sql = "INSERT into Users (Email, Password) VALUES ('" . $email . "', '" . $password . "')";
+			if ($result = $conn->query($sql))
+			{
+				returnSuccessful();
+			}
+			else
+			{
+				error_log("Failed inserting into table!");
+				returnUnsuccessful( true );
+			}
 		}
 		else
 		{
-			returnUnauthenticated();
+			returnUnsuccessful( false );
 		}
 		$conn->close();
 	}
@@ -42,15 +46,15 @@
 		echo $obj;
 	}
 
-	function returnUnauthenticated()
+	function returnUnsuccessful( $available )
 	{
-		$retValue = '{"ID":0,"authenticated":false}';
+		$retValue = '{"available":' . var_export($available, true) . ',"created":false}';
 		sendResultInfoAsJson( $retValue );
 	}
 
-	function returnAuthenticated( $id )
+	function returnSuccessful()
 	{
-		$retValue = '{"ID":' . $id . ',"authenticated":true}';
+		$retValue = '{"available":true,"created":true}';
 		sendResultInfoAsJson( $retValue );
 	}
 
