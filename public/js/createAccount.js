@@ -1,14 +1,7 @@
 var urlBase = 'http://3.236.38.146/public/api';
 var extension = 'php';
 
-var inputId = 0;
-var inputEmail = "";
-var inputPassword = "";
-
 function createAccount(){
-    inputId = 0;
-    inputEmail = "";
-    inputPassword = "";
 
     var available = "";
     var created = "";
@@ -17,6 +10,11 @@ function createAccount(){
     var createPassword = document.getElementById("inputPassword").value; 
     var hash = md5(createPassword);
 
+    if(checkEmail() == false || checkPassword() == false){
+        return;
+    }
+    
+    
     
     document.getElementById("creationResult").innerHTML = "";
 
@@ -49,4 +47,33 @@ function createAccount(){
     }
 
 
+}
+
+function checkPassword(){
+
+    var passwordToBeChecked = document.getElementById("inputPassword").value;
+    var passwordToBeCheckedAgainst = document.getElementById("passwordCheck").value;
+
+    if(passwordToBeChecked != passwordToBeCheckedAgainst){
+        document.getElementById("passwordCheck").value = "";
+        document.getElementById("creationResult").innerHTML = "Passwords do not match";
+        return false;
+
+    }
+    return true;
+
+}
+
+function checkEmail(){
+
+    var testEmail = document.getElementById("inputEmail").value;
+
+    var regex = /\S+@\S+\.\S+/;
+    if(regex.test(testEmail) != true){
+        document.getElementById("creationResult").innerHTML = "Email is not in the correct format";
+        return false;
+    }
+    return true;
+
+    
 }
