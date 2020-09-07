@@ -1,28 +1,61 @@
 .topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
-    background-color: #333;
-  }
-  
-  .topnav li {
-    float: left;
-  }
-  
-  li a {
-    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbarItem {
     color: white;
-    text-align: center;
-    padding: 14px 16px;
-  }
-  
-  li a:hover:not(.active) {
+    font-size: 20px;
+    margin: 15px 10px;
+}
+
+.logoutButton {
+    display: flex;
+    flex-direction: row;
+    transition: 0.25s;
+    margin-right: 15px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.logoutButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.logoutText {
     color: white;
-    background-color: #111;
-  }
-  
-  .col-centered{
-    margin: 0 auto;
-    float: none;
+    font-size: 20px;
+    transform: translate(0, 9px);
+    margin-left: 5px;
+}
+
+@media (min-width: 1000px) {
+    .contactListBody {
+        margin: 30px 20%;
+    }
+}
+@media (max-width: 999px) {
+    .contactListBody {
+        margin: 30px;
+    }
+}
+
+.contactSearchInput {
+    border: 0;
+    outline: none;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 25px;
+    padding: 5px 15px;
+    border: 2px solid black;
+    transition: 0.25s;
+}
+
+.contactSearchInput:focus {
+    border: 2px solid #34b1eb;
+    box-shadow: 0 0 25px -5px #34b1eb;
 }

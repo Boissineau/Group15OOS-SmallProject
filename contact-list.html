@@ -1,0 +1,51 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <link href="public/css/styles.css" rel="stylesheet">	
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+    <!-- Custom components -->
+    <script type="text/javascript" src="public/components/contact/component.js"></script>
+    <!-- End of custom components -->
+
+    <title>Group 15 OOS - Small Project</title>
+</head>
+<body style = "background-color: gunmetal-grey">
+
+    <nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <h5 class="navbarItem">Group 15</h5>
+        <div class="logoutButton">
+          <img src="public/images/logout.svg"/>
+          <p class="logoutText">Logout</p>
+        </div>
+          
+    </nav>
+    
+    <div class="contactListBody">
+      
+      <input class="contactSearchInput" placeholder="Search Contacts..."/>
+
+      <contact-element
+          contact='{ "FirstName":"Contact", "LastName":"One", "Phone":"555-555-1234", "HomeAddress":"123 Main Street, New York, NY 10030", "EmailAddress":"contact1@gmail.com" }'
+      ></contact-element>
+      <contact-element
+          contact='{ "FirstName":"Contact", "LastName":"Two", "Phone":"(+1) 555-867-5309", "HomeAddress":"123 Main Street, New York, NY 10030 and there is some more address information here that I did not cover in the previous contact, mostly used for testing", "EmailAddress":"contact2@gmail.com" }'
+      ></contact-element>
+      <contact-element
+          contact='{ "FirstName":"Contact", "LastName":"VeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongLastName", "Phone":"(+1) 555-867-5309", "HomeAddress":"123 Main Street, New York, NY 10030 and there is some more address information here that I did not cover in the previous contact, mostly used for testing, but this time there is even more testing that needs to be done with a much larger address", "EmailAddress":"contact2@gmail.com" }'
+      ></contact-element>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
