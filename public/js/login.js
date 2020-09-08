@@ -55,7 +55,7 @@ function saveCookie()
 	var minutes = 20;
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
-	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString() + ";SameSite=None; Secure";
+	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString() + ";SameSite=Lax";
 }
 
 function checkEmail(){
