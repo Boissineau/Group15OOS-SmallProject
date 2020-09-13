@@ -18,8 +18,9 @@
     flex-direction: row;
     transition: 0.25s;
     margin-right: 15px;
-    padding: 0 10px;
+    padding: 5px 10px;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .logoutButton:hover {
@@ -29,8 +30,29 @@
 .logoutText {
     color: white;
     font-size: 20px;
-    transform: translate(0, 9px);
     margin-left: 5px;
+}
+
+.contactListTopDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.addButton {
+    margin: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.addButton:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.regularCursor {
+    cursor: default;
 }
 
 @media (min-width: 1000px) {

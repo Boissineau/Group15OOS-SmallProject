@@ -1,9 +1,19 @@
+import { deleteContact } from '../../js/contactList.js';
+
 class Contact extends HTMLElement {
     constructor() {
         super();
 
         // Create a shadow root
         this.attachShadow({mode: 'open'});
+    }
+
+    directToEditContact(contactID) {
+        window.location.href = '/editContact.html?contactID=' + contactID;
+    }
+
+    directToAddContact() {
+
     }
 
     connectedCallback() {
@@ -28,10 +38,12 @@ class Contact extends HTMLElement {
         buttonsDiv.setAttribute('class', 'buttonsDiv');
         const editButton = buttonsDiv.appendChild(document.createElement('div'));
         editButton.setAttribute('class', 'editButton');
+        editButton.addEventListener('click', () => this.directToEditContact(contactObj.ID));
         const editIcon = editButton.appendChild(document.createElement('img'));
         editIcon.setAttribute('src', 'public/images/edit.svg');
         const deleteButton = buttonsDiv.appendChild(document.createElement('div'));
         deleteButton.setAttribute('class', 'deleteButton');
+        deleteButton.addEventListener('click', () => deleteContact(contactObj));
         const deleteIcon = deleteButton.appendChild(document.createElement('img'));
         deleteIcon.setAttribute('src', 'public/images/delete.svg');
 
