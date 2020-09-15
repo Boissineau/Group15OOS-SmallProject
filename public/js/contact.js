@@ -33,7 +33,20 @@ function addContact() {
     var email = document.getElementById("inputEmail").value;
     var address = document.getElementById("inputAddress").value;
     var phoneNumber = document.getElementById("inputPhone").value;
-    var jsonPayload = '{"firstName" : "' + firstName + '", "lastName" : "' + lastName + '", "phone" : "' + phoneNumber + '", "homeAddress" : "' + address + '", "email" : "' + email + '", "userID" : "' + userId + '"}';
+    var jsonPayload =
+        '{"firstName" : "' +
+        firstName +
+        '", "lastName" : "' +
+        lastName +
+        '", "phone" : "' +
+        phoneNumber +
+        '", "homeAddress" : "' +
+        address +
+        '", "email" : "' +
+        email +
+        '", "userID" : "' +
+        userId +
+        '"}';
     var url = urlBase + "/CreateContact." + extension;
     var xhr = new XMLHttpRequest();
     xhr.open("POST", url, false);
@@ -49,6 +62,63 @@ function addContact() {
     } catch (err) {
         // other type of error (network, etc...)
         // document.getElementById("").innerHTML = err.message;
+    }
+}
+
+function editContact() {
+    var cookie = readCookie();
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let id = params.get("contactID");
+
+    if (checkEmail === false) {
+        // document.getElementById("").innerHTML = "Not in the correct format";
+    }
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var phoneNumber = document.getElementById("phoneNumber").value;
+    if (
+        firstName === "" ||
+        lastName === "" ||
+        email === "" ||
+        address === "" ||
+        phoneNumber === ""
+    ) {
+        document.getElementById("editResult").innerHTML =
+            "Cannot have blank entries";
+        return false;
+    }
+    var jsonPayload =
+        '{"firstName" : "' +
+        firstName +
+        '", "lastName" : "' +
+        lastName +
+        '", "phone" : "' +
+        phoneNumber +
+        '", "homeAddress" : "' +
+        address +
+        '", "emailAddress" : "' +
+        email +
+        '", "ID" : "' +
+        id +
+        '"}';
+    var url = urlBase + "/UpdateContact." + extension;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.send(jsonPayload);
+        var jsonObject = JSON.parse(xhr.responseText);
+        if (jsonObject.created === false) {
+            document.getElementById("editResult").innerHTML =
+                "Incorrect entries";
+            return false;
+        }
+
+        window.location.href = "contact-list.html";
+    } catch (err) {
+        document.getElementById("editResult").innerHTML = err.message;
     }
 }
 
