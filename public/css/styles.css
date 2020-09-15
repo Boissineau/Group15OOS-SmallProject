@@ -13,6 +13,171 @@
     margin: 15px 10px;
 }
 
+@media (min-width: 600px) {
+    .cardWrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+    }
+}
+@media (max-width: 599px) {
+    .cardWrapper {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .card {
+        width: 40%;
+        align-self: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px 0px black;
+        overflow: hidden;
+    }
+}
+@media (max-width: 999px) {
+    .card {
+        width: 70%;
+        align-self: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px 0px black;
+        overflow: hidden;
+    }
+}
+@media (max-width: 599px) {
+    .card {
+        width: 90%;
+        align-self: center;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px 0px black;
+        overflow: hidden;
+    }
+}
+
+.cardHeader {
+    background: #5b6066;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 75px;
+    font-size: 3em;
+    color: white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.65);
+}
+
+.cardBody {
+    background: #3a3f44;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardError {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.formInput {
+    background: white;
+    border-style: none;
+    width: 100%;
+    padding: 5px 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 2px solid black;
+    transition: border 0.25s;   
+}
+
+.formInput:focus {
+    background: white;
+    border-style: none;
+    outline: none;
+    border: 2px solid #34b1eb;
+}
+
+.formButtonWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.formText {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+@media (min-width: 600px) {
+    .formButton {
+        background: #1976d2;
+        border-style: none;
+        color: white;
+        width: 50%;
+        min-width: 140px;
+        align-self: right;
+        margin: 15px 0;
+        height: 35px;
+        border-radius: 10px;
+        text-transform: uppercase;
+        font-weight: 600;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+        transition: background 0.25s;
+    }
+}
+@media (max-width: 599px) {
+    .formButton {
+        background: #1976d2;
+        border-style: none;
+        color: white;
+        width: 100%;
+        min-width: 140px;
+        align-self: right;
+        margin: 15px 0;
+        height: 35px;
+        border-radius: 100px;
+        text-transform: uppercase;
+        font-weight: 600;
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
+        transition: background 0.25s;
+    }
+}
+
+.formButton:focus {
+    background: #0f5ca8;
+    outline: none;
+}
+
+.formButton:hover {
+    background: #0f5ca8;
+}
+
+@media (min-width: 1000px) {
+    .cardForm {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+    }
+}
+@media (max-width: 999px) {
+    .cardForm {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+    }
+}
+
 .logoutButton {
     display: flex;
     flex-direction: row;

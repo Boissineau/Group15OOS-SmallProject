@@ -16,66 +16,40 @@
     </head>
     <body style = "background-color: gunmetal-grey">
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary">
 
-            <a class="navbar-brand" href ="index.html">Group 15</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                </ul>
+            <div class="navbarItem regularCursor">
+                Group 15
             </div>
-            
+              
         </nav>
-        <!-- Putting stuff in here will put it inside the box -->
-        <!--  -->
-        <div class ="container d-flex align-items-center" style="position: relative; top: 100px; height: 50%; width: 50%; background-color: #353b48; border-radius: 15px 15px 15px 15px; box-shadow: -1px 2px 5px black"> 
-        <div class="container row justify-content-center">
-            <div class="jumbotron" style="width: 100%; height: 25%; background-color: #7a8288; position: absolute; top: 0; margin: 0; padding: 0; border-top-right-radius: 15px; border-top-left-radius: 15px; left: 0px">
-            <h1 class="display-3" style="font-size: 5vw; text-align: center; margin: auto">Register</h1>
+
+        <div class="cardWrapper">
+            <div class="card">
+                <div class="cardHeader">
+                    Register
+                </div>
+                <div class="cardBody">
+                    <form class="cardForm">
+                        <input class="formInput" type="email" id="inputEmail" placeholder="Email"/>
+                        <input class="formInput" type="password" id="inputPassword" placeholder="Password"/>
+                        <input class="formInput" type="password" id="passwordCheck" placeholder="Confirm Password"/>
+                        <div style="width: 100%">
+                            <button type="button" class="formButton" onclick="createAccount();">
+                                Register
+                            </button>
+                        </div>
+                        <span id="creationResult" class="text-danger cardError"></span>
+                        <div class="formText">
+                            Already have an account?<br/>
+                            <a href="login.html">
+                                Sign In
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
-        <!-- This is the login form -->
-            <div class="container row justify-content-center" style="position: relative; top: 50px; align-content: center; margin-left: auto; margin-right: auto; padding: inherit; width: auto; left: 38px">
-            <form>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="email" class="form-control form-control-sm" id="inputEmail" placeholder="Email">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control form-control-sm" id="inputPassword" placeholder="Password">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="password" class="form-control form-control-sm" id="passwordCheck"   placeholder="Confirm Password">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <a class="btn btn-sm" role="button" style="width: 181px;" onclick="createAccount();">Create Account</a>
-                    </div>
-                </div>
-                <!-- Error from a creation result here -->
-                <span id = "creationResult" class="text-danger"></span> 
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <p>Already have an account? <a href="login.html">Sign in</a>.</p>
-                    </div>
-                </div>
-            
-            </form>
         </div>
-        </div>
-        </div>
-
-    
-
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
