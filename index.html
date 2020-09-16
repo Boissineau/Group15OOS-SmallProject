@@ -1,53 +1,71 @@
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css"
+        integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-	<script type="text/javascript" src="public/js/main.js"></script>
-    <link href="public/css/styles.css" rel="stylesheet">	
+    <link href="public/css/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
     <title>Group 15 OOS - Small Project</title>
+
+    <script>
+        function readCookie() {
+            userId = -1;
+            var data = document.cookie;
+            var splits = data.split(",");
+            // if other data is wanted from the cookie, will be split in the tokens array. Here for future usage if required
+            for (var i = 0; i < splits.length; i++) {
+                var thisOne = splits[i].trim();
+                var tokens = thisOne.split("=");
+                if (tokens[0] == "userId") {
+                    userId = parseInt(tokens[1].trim());
+                }
+                if (userId > 0) {
+                    window.location.href = "contact-list.html";
+                } else {
+                    window.location.href = "login.html";
+                }
+            }
+        }
+    </script>
 </head>
 <!-- gunmetal-grey is a good background  -->
-<body style = "background-color: gunmetal-grey">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-        <a class="navbar-brand" href ="index.html">Group 15</a>
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">Login</a>
-              </li>
-            </ul>
-          </div>
-          
+<body style="background-color: gunmetal-grey" onload="readCookie();">
+
+    <nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary">
+
+        <div class="navbarItem regularCursor">
+            Group 15
+        </div>
+
     </nav>
-    
 
-
-    <!-- Putting stuff in here will put it inside the box -->
-    <!--  -->
-
-    <div class ="container d-flex align-items-center" style="position: relative; top: 100px; height: 50%; width: 50%; background-color: #353b48; border-radius: 15px 15px 15px 15px; box-shadow: -1px 2px 5px black"> 
-      <h1>Landing page. Click Login on navbar to see login page for now</h1>
+    <div class="container d-flex align-items-center justify-content-center"
+        style="position: relative; top: 100px; height: 50%; width: 50%; background-color: #353b48; border-radius: 15px 15px 15px 15px; box-shadow: -1px 2px 5px black">
+        <h1>Redirecting User</h1>
 
     </div>
- 
-
-  
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>
