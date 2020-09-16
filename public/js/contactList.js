@@ -19,7 +19,7 @@ export function getUserID() {
 }
 
 export function fetchContactList(userID, searchString) {
-    const url = 'http://3.236.38.146/public/api/FetchContacts.php';
+    const url = 'http://www.quickercontact.com/public/api/FetchContacts.php';
     const jsonPayload = '{"userID" : "' + userID + '", "searchString" : "' + searchString + '"}';
 
     const xhr = new XMLHttpRequest();
@@ -37,7 +37,7 @@ export function fetchContactList(userID, searchString) {
 export function deleteContact(contactObj) {
     const userID = getUserID();
     if (contactObj.UserID === userID) {
-        const url = 'http://3.236.38.146/public/api/DeleteContact.php';
+        const url = 'http://www.quickercontact.com/public/api/DeleteContact.php';
         const jsonPayload = '{"ID" : "' + contactObj.ID + '"}';
 
         const xhr = new XMLHttpRequest();

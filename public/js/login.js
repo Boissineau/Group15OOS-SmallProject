@@ -1,4 +1,4 @@
-var urlBase = 'http://3.236.38.146/public/api';
+var urlBase = 'http://www.quickercontact.com/public/api';
 var extension = 'php';
 
 var userId = 0;
@@ -10,6 +10,11 @@ function doLogin()
 	var login = document.getElementById("inputEmail").value;
 	var password = document.getElementById("inputPassword").value;
 	var hash = md5( password );
+    
+    if(checkEmail() == false){
+        return;
+    }
+
 
 	document.getElementById("loginResult").innerHTML = "";
 
@@ -51,4 +56,18 @@ function saveCookie()
 	var date = new Date();
 	date.setTime(date.getTime()+(minutes*60*1000));	
 	document.cookie = "userId=" + userId + ";expires=" + date.toGMTString() + ";SameSite=Lax";
+}
+
+function checkEmail(){
+
+    var testEmail = document.getElementById("inputEmail").value;
+
+    var regex = /\S+@\S+\.\S+/;
+    if(regex.test(testEmail) != true){
+        document.getElementById("creationResult").innerHTML = "Email is not in the correct format";
+        return false;
+    }
+    return true;
+
+    
 }

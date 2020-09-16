@@ -1,4 +1,4 @@
-var urlBase = 'http://3.236.38.146/public/api';
+var urlBase = 'http://www.quickercontact.com/public/api';
 var extension = 'php';
 
 function createAccount(){
