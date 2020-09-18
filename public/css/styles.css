@@ -93,7 +93,7 @@
     margin: 10px 0;
     border-radius: 10px;
     border: 2px solid black;
-    transition: border 0.25s;   
+    transition: border 0.25s;
 }
 
 .formInput:focus {
@@ -113,6 +113,9 @@
     margin-bottom: 15px;
 }
 
+.cancel {
+    flex-direction: column;
+}
 @media (min-width: 600px) {
     .formButton {
         background: #1976d2;
@@ -155,6 +158,19 @@
 
 .formButton:hover {
     background: #0f5ca8;
+}
+
+.btnContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cancelBtn {
+    background-color: crimson;
+}
+.cancelBtn:hover {
+    background-color: rgb(163, 18, 47);
 }
 
 @media (min-width: 1000px) {
@@ -246,7 +262,6 @@
     border: 2px solid #34b1eb;
     box-shadow: 0 0 25px -5px #34b1eb;
 }
-
 
 #cancel:hover {
     cursor: pointer;

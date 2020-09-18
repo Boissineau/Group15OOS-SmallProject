@@ -70,6 +70,12 @@ function editContact() {
     let params = new URLSearchParams(document.location.search.substring(1));
     let id = params.get("contactID");
 
+    if (id < 1) {
+        document.getElementById("editResult").innerHTML =
+            "Unknown ID of Contact to Edit";
+        return;
+    }
+
     if (checkEmail === false) {
         // document.getElementById("").innerHTML = "Not in the correct format";
     }
