@@ -10,13 +10,20 @@ class ContactList extends HTMLElement {
         this.attachShadow({mode: 'open'});
     }
 
-    updateContactList(contacts, error) {
+    updateContactList(contacts, error, searchString) {
         while (this.root.childNodes.length > 0) this.root.removeChild(this.root.childNodes[0]);
-        for (let i = 0; i < contacts.length; i++) {
-            const contact = contacts[i];
-            const contactElement = document.createElement('contact-element');
-            contactElement.setAttribute('contact', JSON.stringify(contact));
-            this.root.append(contactElement);
+        if (contacts && contacts.length > 0) {
+            for (let i = 0; i < contacts.length; i++) {
+                const contact = contacts[i];
+                const contactElement = document.createElement('contact-element');
+                contactElement.setAttribute('contact', JSON.stringify(contact));
+                this.root.append(contactElement);
+            }
+        } else {
+            const emptyCard = document.createElement('empty-card');
+            console.log(searchString);
+            emptyCard.setAttribute('searchString', searchString);
+            this.root.append(emptyCard);
         }
     }
 
@@ -26,7 +33,7 @@ class ContactList extends HTMLElement {
 
         // Initialize the contact list on first load
         const jsonResponse = fetchContactList(getUserID(), '');
-        this.updateContactList(jsonResponse.contacts, jsonResponse.error);
+        this.updateContactList(jsonResponse.contacts, jsonResponse.error, '');
 
         // Apply external styles to the shadow DOM
         const linkElem = document.createElement('link');

@@ -52,7 +52,7 @@ export function deleteContact(contactObj) {
                 const contactList = document.getElementById('contactList');
                 const searchString = document.getElementById('contactSearchInput').textContent;
                 const jsonResponse = fetchContactList(userID, searchString);
-                contactList.updateContactList(jsonResponse.contacts, jsonResponse.error);
+                contactList.updateContactList(jsonResponse.contacts, jsonResponse.error, searchString);
             }
 
             return jsonObject;
@@ -69,7 +69,7 @@ function onSearchInputChanged(event) {
     const userID = getUserID();
     const jsonResponse = fetchContactList(userID, searchString);
     const contactList = document.getElementById('contactList');
-    contactList.updateContactList(jsonResponse.contacts, jsonResponse.error);
+    contactList.updateContactList(jsonResponse.contacts, jsonResponse.error, searchString);
 }
 
 function logout() {
