@@ -26,13 +26,14 @@ function addContact() {
     var cookie = readCookie();
 
     if (checkEmail === false) {
-        // document.getElementById("").innerHTML = "Not in the correct format";
+        document.getElementById("addResult").innerHTML =
+            "Not in the correct format";
     }
-    var firstName = document.getElementById("inputFirstName").value;
-    var lastName = document.getElementById("inputLastName").value;
-    var email = document.getElementById("inputEmail").value;
-    var address = document.getElementById("inputAddress").value;
-    var phoneNumber = document.getElementById("inputPhone").value;
+    var firstName = document.getElementById("firstName").value;
+    var lastName = document.getElementById("lastName").value;
+    var email = document.getElementById("email").value;
+    var address = document.getElementById("address").value;
+    var phoneNumber = document.getElementById("phone").value;
     var jsonPayload =
         '{"firstName" : "' +
         firstName +
@@ -56,13 +57,15 @@ function addContact() {
         var jsonObject = JSON.parse(xhr.responseText);
         if (jsonObject.created === false) {
             // Error adding contact
-            // document.getElementById("").innerHTML = "Email/Password Incorrect";
+            document.getElementById("addResult").innerHTML =
+                "Email/Password Incorrect";
             return false;
         }
     } catch (err) {
         // other type of error (network, etc...)
-        // document.getElementById("").innerHTML = err.message;
+        document.getElementById("addResult").innerHTML = err.message;
     }
+    window.location.href = "contact-list.html";
 }
 
 function editContact() {

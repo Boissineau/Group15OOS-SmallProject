@@ -1,90 +1,79 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css" integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <script type="text/javascript" src="public/js/main.js"></script>
-        <link href="public/css/styles.css" rel="stylesheet">	
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Group 15 OOS - Small Project</title>
-    </head>
-    <!-- gunmetal-grey is a good background  -->
-    <body style = "background-color: gunmetal-grey">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css"
+        integrity="sha384-8iuq0iaMHpnH2vSyvZMSIqQuUnQA7QM+f6srIdlgBrTSEyd//AWNMyEaSF2yPzNQ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <script type="text/javascript" src="public/js/contact.js"></script>
+    <link href="public/css/styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 
-            <a class="navbar-brand" href ="index.html">QuickerContact</a>
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
-                </li>
-                </ul>
+    <title>Group 15 OOS - Small Project</title>
+</head>
+<!-- gunmetal-grey is a good background  -->
+
+<body style="background-color: gunmetal-grey">
+
+    <nav class="topnav navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbarItem regularCursor">
+            QuickerContact
+        </div>
+        <div>
+            <div id="logoutButton" class="navbarItem logoutButton" href="#">
+                <img src="public/images/logout.svg" />
+                <span class="logoutText">
+                    Logout
+                </span>
             </div>
-            
-        </nav>
-
-
-        <!-- Putting stuff in here will put it inside the box -->
-        <!--  -->
-        <div class ="container d-flex align-items-center" style="position: relative; top: 100px; height: 50%; width: 50%; background-color: #353b48; border-radius: 15px 15px 15px 15px; box-shadow: -1px 2px 5px black"> 
-            <div class="container row justify-content-center">
-                <div class="jumbotron" style="width: 100%; height: 25%; background-color: #7a8288; position: absolute; top: 0; margin: 0; padding: 0; border-top-right-radius: 15px; border-top-left-radius: 15px; left: 0px">
-                    <h1 class="display-3" style="font-size: 5vw; text-align: center; margin: auto">Add Contact</h1>
-                </div>
-                    <!-- This is the login form -->
-                    <div class="container row justify-content-center" style="position: relative; top: 50px; align-content: center; margin-left: auto; margin-right: auto; padding: inherit; width: auto; left: 38px;">
-                        <form>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-sm" id="inputFirstName" placeholder="First name">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-sm" id="inputLastName" placeholder="Last name">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <input type="" class="form-control form-control-sm" id="inputPhone" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <input type="text" class="form-control form-control-sm" id="inputAddress" placeholder="Address">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-sm-10">
-                            <input type="email" class="form-control form-control-sm" id="inputEmail" placeholder="Email">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col">
-                                <button type="submit" class="btn btn-sm" style="width: 173px;">Add Contact</button>
-                            </div>
-                        </div>
-                        </form>
-                    </div>
-                </div>
-            
-       
         </div>
 
+    </nav>
+
+    <div class="cardWrapper">
+        <div class="card">
+            <div class="cardHeader">
+                Add Contact
+            </div>
+            <div class="cardBody">
+                <form class="cardForm">
+                    <input class="formInput" type="text" id="firstName" placeholder="First Name" />
+                    <input class="formInput" type="text" id="lastName" placeholder="Last Name" />
+                    <input class="formInput" type="text" id="phone" placeholder="Phone" />
+                    <input class="formInput" type="text" id="address" placeholder="Address" />
+                    <input class="formInput" type="email" id="email" placeholder="Email" />
+                    <div class="btnContainer">
+                        <button type="button" style="margin-right: 1em;" class="formButton cancelBtn"
+                            onclick="window.location.href='contact-list.html'">
+                            Cancel
+                        </button>
+                        <button type="button" style="margin-left: 1em;" class="formButton" onclick="addContact();">
+                            Create Contact
+                        </button>
+                    </div>
+                    <span id="addResult" class="text-danger cardError"></span>
+                </form>
+            </div>
+        </div>
+    </div>
 
 
 
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    </body>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+</body>
+
 </html>
