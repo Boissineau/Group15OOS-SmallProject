@@ -142,3 +142,29 @@ function checkEmail() {
     }
     return true;
 }
+
+function grabContactData() {
+    var cookie = readCookie();
+    let params = new URLSearchParams(document.location.search.substring(1));
+    let id = params.get("contactID");
+
+    var jsonPayload = '{"contactID" : "' + id + '"}';
+    var url = urlBase + "/SingularFetchContact." + extension;
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, false);
+    xhr.setRequestHeader("Content-type", "application/json; charset=UTF-8");
+    try {
+        xhr.send(jsonPayload);
+        var jsonObject = JSON.parse(xhr.responseText);
+        document.getElementById("email").value =
+            jsonObject.contact.EmailAddress;
+        document.getElementById("firstName").value =
+            jsonObject.contact.FirstName;
+        document.getElementById("address").value =
+            jsonObject.contact.HomeAddress;
+        document.getElementById("lastName").value = jsonObject.contact.LastName;
+        document.getElementById("phoneNumber").value = jsonObject.contact.Phone;
+    } catch (err) {
+        document.getElementById("editResult").innerHTML = err.message;
+    }
+}
