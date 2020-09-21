@@ -3,6 +3,10 @@ var extension = 'php';
 
 var userId = 0;
 
+function enterKey(e) {
+   if (e.which == 13){doLogin()};
+};
+
 function doLogin()
 {
 	userId = 0;
