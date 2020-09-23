@@ -25,7 +25,7 @@
             QuickerContact
         </div>
         <div>
-            <div id="logoutButton" class="navbarItem logoutButton" href="#">
+            <div id="logoutButton" class="navbarItem logoutButton" href="#" onclick="logout();">
                 <img src="public/images/logout.svg" />
                 <span class="logoutText">
                     Logout
@@ -44,9 +44,11 @@
                 <form class="cardForm">
                     <input class="formInput" type="text" id="firstName" placeholder="First Name" />
                     <input class="formInput" type="text" id="lastName" placeholder="Last Name" />
-                    <input class="formInput" type="text" id="phone" placeholder="Phone" />
-                    <input class="formInput" type="text" id="address" placeholder="Address" />
                     <input class="formInput" type="email" id="email" placeholder="Email" />
+                    <input class="formInput" type="text" id="address" placeholder="Address" />
+                    <input class="formInput" type="text" id="phone" placeholder="Phone Number" />
+
+
                     <div class="btnContainer">
                         <button type="button" style="margin-right: 1em;" class="formButton cancelBtn"
                             onclick="window.location.href='contact-list.html'">

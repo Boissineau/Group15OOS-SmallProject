@@ -168,3 +168,8 @@ function grabContactData() {
         document.getElementById("editResult").innerHTML = err.message;
     }
 }
+
+function logout() {
+    document.cookie = "userId=" + 0 + "; Max-Age=-99999999; SameSite=Lax";
+    window.location.href = "/login.html";
+}
