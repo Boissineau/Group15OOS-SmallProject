@@ -46,7 +46,8 @@
                     <input class="formInput" type="text" id="lastName" placeholder="Last Name" />
                     <input class="formInput" type="email" id="email" placeholder="Email" />
                     <input class="formInput" type="text" id="address" placeholder="Address" />
-                    <input class="formInput" type="text" id="phone" placeholder="Phone Number" />
+                    <input class="formInput" type="text" id="phone" placeholder="Phone Number"
+                        onkeydown="if(event.keyCode===13) addContact();" />
 
 
                     <div class="btnContainer">
